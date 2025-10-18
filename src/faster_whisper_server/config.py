@@ -160,8 +160,8 @@ class WhisperConfig(BaseModel):
     inference_device: Device = Field(default=Device.AUTO)
     device_index: int | list[int] = 0
     compute_type: Quantization = Field(default=Quantization.DEFAULT)
-    cpu_threads: int = 0
-    num_workers: int = 1
+    cpu_threads: int = 8
+    num_workers: int = 2
     ttl: int = Field(default=300, ge=-1)
     """
     Time in seconds until the model is unloaded if it is not being used.
